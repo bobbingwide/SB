@@ -1,23 +1,156 @@
 {
+	"templateParts": {
+	},
 	"settings": {
 		"defaults": {
 			"color": {
 				"gradients": [ ],
 				"link": true,
-				"palette": [ ]
+				"palette": [
+					{
+						"slug": "foreground",
+						"name": "Foreground",
+						"color": "#1a1a2a"
+					},
+					{
+						"slug": "background",
+						"name": "Background",
+						"color": "#ffffff"
+					},
+					{
+						"slug": "link",
+						"name": "Link",
+						"color": "#62add5"
+					},
+					{
+						"slug": "greeny",
+						"name": "Greeny",
+						"color": "#6a6a2a"
+					},
+					{
+						"name": "Pale pink",
+						"slug": "pale-pink",
+						"color": "#f78da7"
+					},
+					{
+						"name": "Vivid red",
+						"slug": "vivid-red",
+						"color": "#cf2e2e"
+					},
+					{
+						"name": "Luminous vivid orange",
+						"slug": "luminous-vivid-orange",
+						"color": "#ff6900"
+					},
+					{
+						"name": "Luminous vivid amber",
+						"slug": "luminous-vivid-amber",
+						"color": "#fcb900"
+					},
+					{
+						"name": "Light green cyan",
+						"slug": "light-green-cyan",
+						"color": "#7bdcb5"
+					},
+					{
+						"name": "Vivid green cyan",
+						"slug": "vivid-green-cyan",
+						"color": "#00d084"
+					},
+					{
+						"name": "Pale cyan blue",
+						"slug": "pale-cyan-blue",
+						"color": "#8ed1fc"
+					},
+					{
+						"name": "Vivid cyan blue",
+						"slug": "vivid-cyan-blue",
+						"color": "#0693e3"
+					},
+					{
+						"name": "Vivid purple",
+						"slug": "vivid-purple",
+						"color": "#9b51e0"
+					},
+					{
+						"name": "Very light gray",
+						"slug": "very-light-gray",
+						"color": "#eeeeee"
+					},
+					{
+						"name": "Cyan bluish gray",
+						"slug": "cyan-bluish-gray",
+						"color": "#abb8c3"
+					},
+					{
+						"name": "Darker gray",
+						"slug": "darker-gray",
+						"color": "#616161"
+					},
+					{
+						"name": "White",
+						"slug": "white",
+						"color": "#ffffff"
+					}]
 			},
 			"spacing": {
 				"customPadding": true
 			},
 			"typography": {
 				"customLineHeight": true,
-				"fontFamilies": [ ],
-				"fontSizes": [ ]
+				"fontFamilies": [
+					{
+						"fontFamily": "Tahoma, Arial, sans-serif",
+						"slug": "tahoma-arial"
+					},
+					{
+						"fontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+						"slug": "helvetica-arial"
+					}
+
+				],
+				"fontSizes": [
+					{
+						"name": "Tiny",
+						"size": "12px",
+						"slug": "tiny"
+					},
+					{
+						"name": "Small",
+						"size": "16px",
+						"slug": "small"
+					},
+					{
+						"name": "Normal",
+						"size": "18px",
+						"slug": "normal"
+					},
+					{
+						"name": "Medium",
+						"size": "20px",
+						"slug": "medium"
+					},
+					{
+						"name": "Large",
+						"size": "24px",
+						"slug": "large"
+					},
+					{
+						"name": "Larger",
+						"size": "30px",
+						"slug": "larger"
+					},
+					{
+						"name": "Largest",
+						"size": "36px",
+						"slug": "largest"
+					}
+				]
 			},
 			"custom": {
 				"width": {
 					"default": "840px",
-					"wide": "1100px"
+					"wide": "1200px"
 				},
 				"margin": {
 					"horizontal": "14px"
@@ -27,7 +160,11 @@
 	},
 	"styles": {
 		"root": {
-			"color": { },
+			"color": {
+					"background": "var( --wp--preset--color--background )",
+					"text": "var( --wp--preset--color--foreground )",
+					"link": "var( --wp--preset--color--link)"
+			},
 			"typography": { }
 		}
 	}

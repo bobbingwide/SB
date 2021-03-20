@@ -3,7 +3,11 @@
 if ( ! function_exists( 'sb_support' ) ) :
 	function sb_support()  {
 
-		// Adding support for featured images.
+		/*
+		 * Enable support for Post Thumbnails on posts and pages.
+		 *
+		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+		 */
 		add_theme_support( 'post-thumbnails' );
 
 		// Adding support for alignwide and alignfull classes in the block editor.
@@ -19,13 +23,42 @@ if ( ! function_exists( 'sb_support' ) ) :
 		add_theme_support( 'editor-styles' );
 
 		// Enqueue editor styles.
-		add_editor_style( 'style.css' );
+		// @TODO Is it a good idea or a bad idea to use style.css as the editor style
+		// It's OK when it's empty but is it right to use this file normally?
+		//add_editor_style( 'style.css' );
+		add_editor_style( 'style-editor.css' );
+
 
 		// Add support for custom units.
 		add_theme_support( 'custom-units' );
+
+		/** Add support for using link colour in certain blocks
+		 * https://developer.wordpress.org/block-editor/developers/themes/theme-support/#experimental-%e2%80%94-link-color-control
+		 */
+		add_theme_support('experimental-link-color');
+
+		add_theme_support('custom-line-height');
+
+		// Add default posts and comments RSS feed links to head.
+		add_theme_support( 'automatic-feed-links' );
+
+
+
 	}
 	add_action( 'after_setup_theme', 'sb_support' );
 endif;
+
+/**
+ *
+ */
+function sb_get_theme_version() {
+	if ( defined( 'SCRIPT_DEBUG') && SCRIPT_DEBUG ) {
+		$version = filemtime( get_stylesheet_directory() . "/style.css");
+	} else {
+		$version = wp_get_theme()->get( 'Version' );
+	}
+	return $version;
+}
 
 /**
  * Enqueue scripts and styles.
@@ -33,9 +66,11 @@ endif;
 function sb_scripts() {
 
 	// Enqueue theme stylesheet.
-	wp_enqueue_style( 'sb-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
+
+	$version = sb_get_theme_version();
+	wp_enqueue_style( 'sb-style', get_template_directory_uri() . '/style.css', array(), $version );
 
 	// Enqueue alignments stylesheet.
-	wp_enqueue_style( 'sb-alignments-style', get_template_directory_uri() . '/assets/alignments-front.css', array(), wp_get_theme()->get( 'Version' ) );
+	//wp_enqueue_style( 'sb-alignments-style', get_template_directory_uri() . '/assets/alignments-front.css', array(), wp_get_theme()->get( 'Version' ) );
 }
 add_action( 'wp_enqueue_scripts', 'sb_scripts' );

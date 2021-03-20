@@ -13,4 +13,46 @@ Text Domain: sb
 
 SB WordPress Theme, (C) 2021 WordPress.org
 SB is distributed under the terms of the GNU GPL.
+
+Some of the styling comes from the original theme - Genesis-SB - Specially Built.
+See also experimental-theme.json, which started as pretty empty and has
+been updated copying and cobbling values from Fizzie and other experimental FSE themes.
 */
+
+/*
+body {
+    background-color: #ffffff;
+    color: #1A1A2A;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.625;
+    margin: 0 0 0 0px;
+}
+
+
+ */
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 10px;
+}
+
+
+h1.wp-block-site-title {
+    
+}
+
