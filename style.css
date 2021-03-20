@@ -19,7 +19,7 @@ See also experimental-theme.json, which started as pretty empty and has
 been updated copying and cobbling values from Fizzie and other experimental FSE themes.
 */
 
-/*
+
 body {
     background-color: #ffffff;
     color: #1A1A2A;
@@ -29,9 +29,6 @@ body {
     line-height: 1.625;
     margin: 0 0 0 0px;
 }
-
-
- */
 
 * {
     box-sizing: border-box;
@@ -49,10 +46,48 @@ h4,
 h5,
 h6 {
     margin: 0 0 10px;
+    font-family: Lato, sans-serif;
 }
-
+a {
+    color: var( --wp--preset--color--link);
+    text-decoration: none;
+}
 
 h1.wp-block-site-title {
-    
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 6px;
 }
+
+h1.wp-block-site-title a {
+    color: var(--wp--preset-color-foreground);
+}
+
+p.wp-block-site-tagline {
+    font-size: 16px;
+    margin: 0;
+}
+
+header .wp-block-column:not(:first-child) {
+    margin-left: 0em;
+}
+
+input,
+select,
+textarea {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #1A1A2A;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 16px;
+    width: 100%;
+}
+
+.wp-block-search .wp-block-search__inside-wrapper {
+    padding-top: 10px;
+}
+
+
 
