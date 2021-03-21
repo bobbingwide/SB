@@ -90,4 +90,187 @@ textarea {
 }
 
 
+/* # Site Navigation
+---------------------------------------------------------------------------------------------------- */
+
+nav.wp-block-navigation {
+    margin: 0 auto;
+
+}
+nav.wp-block-navigation a {
+    color: #fff;
+}
+
+ul.wp-block-navigation__container {
+    text-align: center;
+}
+
+
+
+.wp-block-navigation__container {
+    clear: both;
+    font-size: 16px;
+    line-height: 1;
+    width: 100%;
+    padding-top: 2px;
+}
+
+.wp-block-navigation__container .menu-item {
+    display: inline-block;
+    text-align: left;
+}
+
+.wp-block-navigation__container a {
+    color: #333;
+    display: block;
+    /*
+    padding: 30px 24px;
+    padding: 0px 16px;
+
+     */
+}
+
+.wp-block-navigation__container a:hover,
+.wp-block-navigation__container .current-menu-item > a,
+.wp-block-navigation__container .sub-menu .current-menu-item > a:hover {
+    color: #ffffff;
+}
+
+.wp-block-navigation__container a {
+    background: #328DBD;
+    background: linear-gradient(top, rgba(102, 175, 214, 0.6) 0, rgba(54, 150, 201, 0.6) 40%, rgba(34, 96, 129, 0.6) 100%) no-repeat;
+    background: -webkit-linear-gradient(top, rgba(102, 175, 214, 0.6) 0, rgba(54, 150, 201, 0.6) 40%, rgba(34, 96, 129, 0.6) 100%) no-repeat;
+    background: -moz-linear-gradient(top, rgba(102, 175, 214, 0.6) 0, rgba(54, 150, 201, 0.6) 40%, rgba(34, 96, 129, 0.6) 100%) no-repeat;
+    background: -o-linear-gradient(top, rgba(102, 175, 214, 0.6) 0, rgba(54, 150, 201, 0.6) 40%, rgba(34, 96, 129, 0.6) 100%) no-repeat;
+    background: -ms-linear-gradient(top, rgba(102, 175, 214, 0.6) 0, rgba(54, 150, 201, 0.6) 40%, rgba(34, 96, 129, 0.6) 100%) no-repeat;
+    background: linear-gradient(top, rgba(102, 175, 214, 0.6) 0, rgba(54, 150, 201, 0.6) 40%, rgba(34, 96, 129, 0.6) 100%) no-repeat;
+    -svg-background: linear-gradient(top, rgba(102, 175, 214, 0.6) 0, rgba(54, 150, 201, 0.6) 40%, rgba(34, 96, 129, 0.6) 100%) no-repeat;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(26, 72, 97, 0.6);
+    padding: 0 22px;
+    margin: 0 auto;
+    color: #163F55;
+
+    padding: 0 22px;
+    margin: 0 auto;
+    position: relative;
+    display: block;
+    height: 28px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #31454E;
+    line-height: 28px;
+    text-align: center;
+}
+
+
+.wp-block-navigation__container .sub-menu {
+    left: -9999px;
+    opacity: 0;
+    position: absolute;
+    -webkit-transition: opacity .4s ease-in-out;
+    -moz-transition:    opacity .4s ease-in-out;
+    -ms-transition:     opacity .4s ease-in-out;
+    -o-transition:      opacity .4s ease-in-out;
+    transition:         opacity .4s ease-in-out;
+    width: 200px;
+    z-index: 99;
+    display: block;
+}
+
+.wp-block-navigation__container .sub-menu a {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-top: none;
+    font-size: 14px;
+
+    position: relative;
+
+    overflow: hidden;
+    width: 200px;
+}
+
+.wp-block-navigation__container .sub-menu .sub-menu {
+    margin: -55px 0 0 199px;
+}
+
+.wp-block-navigation__container .menu-item:hover {
+    position: static;
+}
+
+.wp-block-navigation__container .menu-item:hover > .sub-menu {
+    left: auto;
+    opacity: 1;
+}
+
+.wp-block-navigation__container > .first > a {
+    padding-left: 0;
+}
+
+.wp-block-navigation__container > .last > a {
+    padding-right: 0;
+}
+
+.wp-block-navigation__container > .right {
+    color: #fff;
+    float: right;
+    list-style-type: none;
+    padding: 30px 0;
+}
+
+.wp-block-navigation__container > .right > a {
+    display: inline;
+    padding: 0;
+}
+
+.wp-block-navigation__container > .rss > a {
+    margin-left: 48px;
+}
+
+.wp-block-navigation__container > .search {
+    padding: 10px 0 0;
+}
+
+.wp-block-navigation ul li {
+    padding-right: 10px;
+}
+
+.wp-block-navigation ul li a {
+    padding-right: 22px;
+}
+
+.wp-block-navigation ul ul a {
+    color: #333;
+}
+/*   .nav-primary */
+.wp-block-navigation a:hover,
+.wp-block-navigation .current-menu-item > a,
+.wp-block-navigation .sub-menu .current-menu-item > a:hover {
+    background: #467F95;
+    background: linear-gradient(top, #6DA5BA 0, #5293AD 27%, #2E5361 100%) no-repeat;
+    background: -webkit-linear-gradient(top, #6DA5BA 0, #5293AD 27%, #2E5361 100%) no-repeat;
+    background: -moz-linear-gradient(top, #6DA5BA 0, #5293AD 27%, #2E5361 100%) no-repeat;
+    background: -o-linear-gradient(top, #6DA5BA 0, #5293AD 27%, #2E5361 100%) no-repeat;
+    background: -ms-linear-gradient(top, #6DA5BA 0, #5293AD 27%, #2E5361 100%) no-repeat;
+    background: linear-gradient(top, #6DA5BA 0, #5293AD 27%, #2E5361 100%) no-repeat;
+    -svg-background: linear-gradient(top, #6DA5BA 0, #5293AD 27%, #2E5361 100%) no-repeat;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #335B6C;
+    padding: 0 22px;
+    margin: 0 auto;
+}
+
+.has-child>.wp-block-navigation-link__content {
+    padding-right: 22px;
+}
+
+/* ## Site Header Navigation
+--------------------------------------------- */
+
+
+
 
