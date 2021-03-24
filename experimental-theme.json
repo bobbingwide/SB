@@ -148,12 +148,9 @@
 				]
 			},
 			"custom": {
-				"width": {
-					"default": "840px",
-					"wide": "1200px"
-				},
-				"margin": {
-					"horizontal": "14px"
+				"layout": {
+					"contentSize": "800px",
+					"wideSize": "1200px"
 				}
 			}
 		}
