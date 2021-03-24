@@ -11,7 +11,7 @@ if ( ! function_exists( 'sb_support' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		// Adding support for alignwide and alignfull classes in the block editor.
-		add_theme_support( 'align-wide' );
+		//add_theme_support( 'align-wide' );
 
 		// Adding support for core block visual styles.
 		add_theme_support( 'wp-block-styles' );
@@ -74,3 +74,20 @@ function sb_scripts() {
 	//wp_enqueue_style( 'sb-alignments-style', get_template_directory_uri() . '/assets/alignments-front.css', array(), wp_get_theme()->get( 'Version' ) );
 }
 add_action( 'wp_enqueue_scripts', 'sb_scripts' );
+
+/**
+ * Enables oik based shortcodes.
+ */
+function sb_init() {
+	if (function_exists('bw_add_shortcode')) {
+		do_action("oik_add_shortcodes");
+
+	}
+	else {
+		gob();
+	}
+	//add_shortcode( 'archive_description', 'fizzie_archive_description' );
+	//add_shortcode( 'post-edit', 'fizzie_post_edit' );
+}
+
+add_action( 'init', 'sb_init', 20);
