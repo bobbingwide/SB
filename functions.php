@@ -84,7 +84,7 @@ function sb_init() {
 
 	}
 	else {
-		gob();
+		// oik shortcodes won't be expanded.
 	}
 	//add_shortcode( 'archive_description', 'fizzie_archive_description' );
 	//add_shortcode( 'post-edit', 'fizzie_post_edit' );
