@@ -1,0 +1,16 @@
+/* (C) Copyright Bobbing Wide 2021
+
+Extra CSS to style the WP_DEBUG divs
+*/
+
+div.wp-site-blocks > div.WP_DEBUG:first-of-type {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    padding: 0 1em;
+}
+
+div.wp-site-blocks > div.WP_DEBUG:first-of-type:hover {
+    position: absolute;
+    z-index: 100000;
+}
