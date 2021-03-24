@@ -1,4 +1,5 @@
 # SB 
+![screenshot](https://raw.githubusercontent.com/bobbingwide/SB/main/screenshot.png)
 * Contributors: bobbingwide, vsgloik
 * Donate link: https://www.oik-plugins.com/oik/oik-donate/
 * Tags: blocks, FSE, Gutenberg
@@ -8,14 +9,12 @@
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Seriously Bonkers' experimental Full Site Editing theme.
+* Second Byte: Seriously Bonkers' experimental Full Site Editing theme.
 
 ## Description 
 SB is an experimental theme attempting to implement Full Site Editing (FSE) with Gutenberg blocks.
 
-The theme is required to replace the "Specially Built" Genesis-SB theme that is used in [seriouslybonkers.com](https://seriouslybonkers.com).
-
-* Remember: There is [No Silver Bullet](https://en.wikipedia.org/wiki/No_Silver_Bullet).
+The "Second Byte" theme is required to replace the "Specially Built" Genesis-SB theme that is used in [seriouslybonkers.com](https://seriouslybonkers.com).
 
 
 Requirements:
@@ -29,15 +28,23 @@ Contents:
 
 IMPLEMENTED:
 
-The `block-templates` are:
+The `block-templates` developed so far are:
 
-* index.html
-* singular.html
-* 404.html - Not found page
+* index.html - default template when no others found
+* singular.html - Single bigram page - under construction
+* 404.html - Not found page - under construction
 
 The `block-template-parts` are:
 
-* header.html
+* body-and-sidebar.html - main content and sidebar
+* footer - Final full width footer
+* header.html - Displays the header: site logo, site title and tagline and search box
+* home-body.html - the main content - under construction
+* main-menu.html - the primary navigation menu
+* page-footer.html - 3 column footer widgets
+* sidebar.html - sidebar widgets - under construction
+* social-links.html - at the bottom of the footer
+* structured-breakdown.html - first widget in the sidebar
 
 
 PLANNED:
@@ -45,43 +52,34 @@ PLANNED:
 * Several templates
 * Quite a few template parts
 
-The `block-templates` are:
-
-TBC ... copied from Fizzie.
+The planned `block-templates` are:
 
 
-* archive - generic template used for archives: author, taxonomy, date, tag
-* category - used to display the Category archive
-* front-page - used for Page Shown On Front
-* home - used for Blog Posts index page or Posts Shown on Front (when front-page not implemented)
-* index - used when no other template is found
-* search - Display search results
-* single - used for a single post / attachment / CPT
-* single-oik-plugins - used for a single oik-plugin
-* single-oik-themes - used for a single oik-theme
-* singular - used when single or page does not exist
+* archive.html - generic template used for archives: author, taxonomy, date, tag
+* category.html - used to display the Category archive
+* date.html - date base archive
+* home.html -  used for Blog Posts index page or Posts Shown on Front (when front-page not implemented)
+* page-sb.html - displays the reactSB page
+* search.html - Display search results
+* single-bigram.html - display for a single bigram CPT
+* taxonomy.html - used to display taxonomy terms
+
 
 * See the template visualization: https://developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04.png
 
-The `block-template-parts` are:
+The planned `block-template-parts` are:
 
-* footer - Final full width footer
-* header - Displays the header: site logo, site title and tagline, header menu.
-* header-menu - Displays the header menu
-* home-part - A template part used in debugging. Classic block
-* home-query - Displays the posts on the blog page
-* metadates - Displays Date published, last updated and [Edit] link
-* page-content - Primary content part for a page
-* page-footer - Full width footer with 3 columns - representing widgets
-* post-content - Primary content part for a post
-* posts - An attempt to display the posts using query blocks - incomplete- not used
-* search - Using the Search block
-* social-links - Social link icons
-
-
+- query block to display the groups of 4 featured images in a grid
+- query block to display links to other posts
+- pagination
+* - more widgets for the sidebar: Sequentially biased, Summed by, Site building
+- Seen before metadata
+- Tags
+- Published and last update date, with Edit link
 
 ## Installation 
 
+* Install and activate pre-requisite plugins.
 * Either install Gutenberg 10.2.1 or higher or install and build the latest Gutenberg source.
 * Activate Gutenberg.
 * Install and activate the SB theme, as you would install any other theme. Full Site Editing will be enabled automatically.
@@ -101,12 +99,19 @@ The `block-template-parts` are:
 
 ## Change Log 
 # 0.0.0 
-* Added: Created the basic theme using `new-empty-theme.php` from `WordPress/theme-experiments`.
+* Added: Created the basic theme using `new-empty-theme.php` from `WordPress/theme-experiments`.,https://github.com/bobbingwide/sb/issues/1
+* Changed: Updated index.php to tell the user to use Gutenberg
+* Changed: Styled with a combination of experimental-theme.json and style.css
+* Changed: Copied/cobbled styling for the navigation menu and footer from Genesis-SB
+* Changed: Used the new method to define normal content and wide content width,https://github.com/bobbingwide/sb/issues/4
+* Changed: Used the new method to define the footer areas as full width
+* Fixed: Enable oik shortcodes to be able to use [guts] in the footer area
+* Changed: Use custom.css for styling DEBUG divs
+* Changed: Created/updated block templates and template parts from the latest versions in the Site Editor for testing elsewhere
+* Fixed: Workaround problem with link colour on headings by not setting it; it's not needed anyway.,https://github.com/bobbingwide/sb/issues/5
 * Tested: With Gutenberg source trunk somewhere between 10.2.1 and 10.3
 * Tested: With WordPress 5.7 and WordPress Multi Site
 * Tested: With PHP 8.0
-
-
 
 
 ## Notes 
@@ -145,27 +150,35 @@ See my articles on herbmiller.me:
 
 For other articles see the [Fizzie theme's readme](https://github.com/bobbingwide/fizzie/blob/main/README.md)
 
-
-
 For some other FSE themes see [WP-a2z FSE themes](https://blocks.wp-a2z.org/oik-themes)
 
 ## Brief development history 
 
-SB is my second attempt at creating a Full Site Editing theme using Gutenberg.
+SB is my second attempt at creating a Full Site Editing theme using Gutenberg. Hence the subtitle Second Byte.
 
 I started creating it for the third call for testing for the #fse-outreach-experiment
 * [FSE Program Testing Call #3: Create a fun & custom 404 page](https://make.wordpress.org/test/2021/03/09/fse-program-testing-call-3-create-a-fun-custom-404-page/)
 
 In some respects, even though it should consist of fewer templates and templates parts, SB will be harder to achieve
-since there is some PHP logic for the home page which I imagine will be more than tricky to implement without
-overriding server side logic.
+since there is some PHP logic for the home page which I imagine will be more than tricky to implement.
+I believe I will need to find a method to override server side logic for the query loop blocks.
 
 Now I think about it, I reckon I can implement a solution.
 I supposed I'd better design it first.
 
 So I'm going to stop writing this and continue with the "programmming".
 
+BTW. The Seriously Bonkers site is a direct spin off from a fun distraction played by members of a development team on a project started 30 years ago called Silver Bullet.
 
+It was my manager's idea to call the project Silver Bullet; he'd read [No Silver Bullet](https://en.wikipedia.org/wiki/No_Silver_Bullet)
+and wanted to attempt to disprove the main premise. Our plan was to implement a complicated client-server solution using some advanced tools
+in far less time than originally estimated.
+
+The Silver Bullet project itself didn't fail. But it wasn't completed either; the plug was pulled on the parent product.
+
+We had a lot of fun on the project, and even more fun collecting the SB's that now make up the fascinating website.
+
+Silver Bullet was being developed using bleeding edge technology. 30 years on Second Byte is "still bleeding".
 
 
 
