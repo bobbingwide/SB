@@ -264,12 +264,20 @@ ul.wp-block-navigation__container {
     margin: 0 auto;
 }
 
-.has-child>.wp-block-navigation-link__content {
+.wp-block-navigation .has-child>.wp-block-navigation-link__content {
+    padding-right: 22px;
+
+
+}
+
+.wp-block-navigation .wp-block-navigation-link__content {
+    padding-top: 0;
+    padding-left: 22px;
     padding-right: 22px;
 }
 
-/* ## Site Header Navigation
---------------------------------------------- */
+    /* ## Site Header Navigation
+    --------------------------------------------- */
 
 /* Footer styling */
 footer.wp-block-template-part {
