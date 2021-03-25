@@ -91,3 +91,6 @@ function sb_init() {
 }
 
 add_action( 'init', 'sb_init', 20);
+
+require_once __DIR__ . '/includes/block-overrides.php';
+
