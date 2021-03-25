@@ -86,7 +86,7 @@ textarea {
 }
 
 .wp-block-search .wp-block-search__inside-wrapper {
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 
@@ -276,8 +276,27 @@ ul.wp-block-navigation__container {
     padding-right: 22px;
 }
 
-    /* ## Site Header Navigation
-    --------------------------------------------- */
+/* Sidebar styling */
+aside {
+    font-size: 14px;
+    margin: 0;
+    margin-top: 100px;
+}
+
+aside h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+aside ul {
+    padding-inline-start: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
 
 /* Footer styling */
 footer.wp-block-template-part {
