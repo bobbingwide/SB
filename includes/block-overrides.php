@@ -15,7 +15,7 @@ require_once __DIR__ . '/block-override-functions.php';
  */
 //require_once __DIR__ . '/query-pagination.php';
 //require_once __DIR__ . '/query-pagination-numbers.php';
-//require_once __DIR__ . '/query-loop.php';
+require_once __DIR__ . '/query-loop.php';
 //require_once __DIR__ . '/post-excerpt.php';
 //require_once __DIR__ . '/post-content.php';
 require_once __DIR__ . '/template-part.php';
