@@ -94,3 +94,41 @@ add_action( 'init', 'sb_init', 20);
 
 require_once __DIR__ . '/includes/block-overrides.php';
 
+
+/**
+ * Filters the_posts
+ *
+ * Is this a good idea? Filter the posts to get the ones with attached images first.
+ * How do we mark the posts that have attached images?
+ *
+ * @param array $posts
+ * @param object $query
+ * @return array reordered array of posts
+ */
+function genesis_sb_the_posts( $posts, $query ) {
+    bw_trace2( count( $posts ), "count(posts)", true );
+
+    $images = array();
+    $non_images = array();
+    foreach ( $posts as $post ) {
+        $thumbnail = get_post_thumbnail_id( $post );
+        if ( $thumbnail > 0 ) {
+            bw_trace2( $thumbnail, "post: ". $post->ID, false );
+            $images[] = $post;
+
+        } else {
+            $non_images[] = $post;
+        }
+    }
+    bw_trace2( $images, "images: " . count( $images ), false );
+    bw_trace2( $non_images, "non_images: " . count( $non_images ), false );
+    $posts = array_merge( $images, $non_images );
+    $query->featured_images = count( $images );
+    bw_trace2( $query, "query", false );
+    bw_trace2( count( $posts ), "count(posts)", false );
+
+    return $posts;
+}
+
+add_filter( 'the_posts', 'genesis_sb_the_posts', 10, 2 );
+
