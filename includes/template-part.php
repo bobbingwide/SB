@@ -63,9 +63,12 @@ function sb_render_block_core_template_part( $attributes ) {
             $template_part_file_path = get_stylesheet_directory() . '/block-template-parts/' . $attributes['slug'] . '.html';
             if ( 0 === validate_file( $attributes['slug'] ) && file_exists( $template_part_file_path ) ) {
                 $content = file_get_contents( $template_part_file_path );
+
             }
         }
     }
+
+    // bw_trace2( $content, "template part content", false, BW_TRACE_VERBOSE );
 
     if ( is_null( $content ) && is_user_logged_in() ) {
         //print_r( $attributes );
@@ -127,4 +130,3 @@ function sb_render_block_core_template_part( $attributes ) {
 
     return "<$html_tag $wrapper_attributes>" . str_replace( ']]>', ']]&gt;', $content ) . "</$html_tag>";
 }
-
