@@ -4,7 +4,7 @@ Donate link: https://www.oik-plugins.com/oik/oik-donate/
 Tags: blocks, FSE, Gutenberg
 Requires at least: 5.7
 Tested up to: 5.7
-Version: 0.0.0
+Version: 0.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,12 +38,26 @@ The `block-template-parts` are:
 * body-and-sidebar.html - main content and sidebar
 * footer - Final full width footer
 * header.html - Displays the header: site logo, site title and tagline and search box
-* home-body.html - the main content - under construction
+* home-body.html - the main content - still under construction
 * main-menu.html - the primary navigation menu
 * page-footer.html - 3 column footer widgets
+* sequentially-biased.html - sidebar widget
 * sidebar.html - sidebar widgets - under construction
+* site-building.html - sidebar widget
 * social-links.html - at the bottom of the footer
 * structured-breakdown.html - first widget in the sidebar
+* summed-by.html - sidebar widget
+
+
+home-body.html now consists of three query blocks which are overriden in server side rendering
+to deliver:
+
+- Hero section - query block to display the first bigram for the page
+- Thumbnail section - up to 4 groups of 4 featured images displayed in a grid
+- Links section -query block to display links to other posts
+
+followed by a pagination section.
+
 
 
 PLANNED:
@@ -68,18 +82,18 @@ See the template visualization: https://developer.wordpress.org/files/2014/10/Sc
 
 The planned `block-template-parts` are:
 
-- query block to display the groups of 4 featured images in a grid
-- query block to display links to other posts
-- pagination
-- more widgets for the sidebar: Sequentially biased, Summed by, Site building
-- Seen before metadata
-- Tags 
-- Published and last update date, with Edit link
+* query block to display the groups of 4 featured images in a grid
+* query block to display links to other posts
+* pagination
+* more widgets for the sidebar: Sequentially biased, Summed by, Site building
+* Seen before metadata
+* Tags 
+* Published and last update date, with Edit link
 
 == Installation ==
 
 * Install and activate pre-requisite plugins.
-* Either install Gutenberg 10.2.1 or higher or install and build the latest Gutenberg source.
+* Either install Gutenberg 10.3.0-rc1 or higher or install and build the latest Gutenberg source.
 * Activate Gutenberg.
 * Install and activate the SB theme, as you would install any other theme. Full Site Editing will be enabled automatically.
 * For some of the templates and template parts to work properly you will need to install and activate the pre-requisite plugins.
@@ -92,11 +106,24 @@ Pre-requisite plugins: see also Notes
 * [oik-a2z](https://github.com/bobbingwide/oik-a2z)
 * [sb-breadcrumbs-block](https://github.com/bobbingwide/sb-breadcrumbs-block)
 * [bigram](https://github.com/bobbingwide/bigram)
-
-
  
 
 == Change Log ==
+= 0.1.0 = 
+* Added: Implement server overrides for the 3 queries used on the home page,[github bobbingwide SB issues 13]
+* Added: Initial pagination block for the home page,[github bobbingwide SB issues 13]
+* Changed: Minor improvements to the 404.html template
+* Added: Improve sidebar and footer widget nav menus,[github bobbingwide SB issues 9]
+* Changed: Reduce CSS for the main nav menu,[github bobbingwide SB issues 9]
+* Added: Add the additional 3 widgets as separate template parts in the sidebar template part,[github bobbingwide SB issues 1]
+* Changed: Improve styling,[github bobbingwide SB issues 1]
+* Fixed: Override gutenberg rendering; don't run wpautop on template parts,[github bobbingwide SB issues 5]
+* Fixed: Override gutenberg rendering; cater for unregistered taxonomies,[github bobbingwide SB issues 7]
+* Fixed: Correct CSS for displaying the div.WP_DEBUG
+* Tested: With Gutenberg source trunk 10.3.0-rc1
+* Tested: With WordPress 5.7 and WordPress Multi Site
+* Tested: With PHP 8.0
+
 = 0.0.0 =
 * Added: Created the basic theme using `new-empty-theme.php` from `WordPress/theme-experiments`.,[github bobbingwide SB issues 1]
 * Changed: Updated index.php to tell the user to use Gutenberg
