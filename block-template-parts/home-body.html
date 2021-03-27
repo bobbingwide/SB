@@ -6,12 +6,13 @@
 <!-- wp:post-title {"isLink":true} /-->
 <!-- wp:post-content /-->
 
-<!-- wp:separator -->
-<hr class="wp-block-separator"/>
-<!-- /wp:separator -->
-
-<!-- wp:post-date /-->
+<div class="entry-footer">
+[bw_fields _seen_before]
+<!-- wp:post-hierarchical-terms {"term":"category"} /-->
+<!-- wp:post-hierarchical-terms {"term":"s-word"} /-->
+<!-- wp:post-hierarchical-terms {"term":"b-word"} /-->
 <p>Published: [bw_field post_date] | Last updated: [bw_field post_modified] [post-edit]</p>
+</div>
 <!-- /wp:query-loop -->
 <!-- /wp:query -->
 

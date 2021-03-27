@@ -149,10 +149,8 @@ function sb_post_edit( $attrs, $content, $tag ) {
     $url = get_edit_post_link();
     if ( $url ) {
         $class = 'bw_edit';
-        $text= __( '[Edit]', 'sb' );
+        $text= __( '(Edit)', 'sb' );
         $link='<a class="' . esc_attr( $class ) . '" href="' . esc_url( $url ) . '">' . $text . '</a>';
     }
     return $link;
 }
-
-
