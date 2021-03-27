@@ -87,7 +87,7 @@ function sb_init() {
 		// oik shortcodes won't be expanded.
 	}
 	//add_shortcode( 'archive_description', 'fizzie_archive_description' );
-	//add_shortcode( 'post-edit', 'fizzie_post_edit' );
+	add_shortcode( 'post-edit', 'sb_post_edit' );
 }
 
 add_action( 'init', 'sb_init', 20);
@@ -131,4 +131,28 @@ function genesis_sb_the_posts( $posts, $query ) {
 }
 
 add_filter( 'the_posts', 'genesis_sb_the_posts', 10, 2 );
+
+/**
+ * Implements [post-edit] shortcode.
+ *
+ * If the user is authorised return a post edit link for the current post.
+ *
+ * @param $attrs
+ * @param $content
+ * @param $tag
+ *
+ * @return string
+ */
+
+function sb_post_edit( $attrs, $content, $tag ) {
+    $link = '';
+    $url = get_edit_post_link();
+    if ( $url ) {
+        $class = 'bw_edit';
+        $text= __( '[Edit]', 'sb' );
+        $link='<a class="' . esc_attr( $class ) . '" href="' . esc_url( $url ) . '">' . $text . '</a>';
+    }
+    return $link;
+}
+
 
