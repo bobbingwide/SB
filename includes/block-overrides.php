@@ -1,5 +1,7 @@
 <?php
 
+
+
 /**
  * Implements block overrides as required.
  *
@@ -15,7 +17,7 @@ require_once __DIR__ . '/block-override-functions.php';
  */
 //require_once __DIR__ . '/query-pagination.php';
 //require_once __DIR__ . '/query-pagination-numbers.php';
-require_once __DIR__ . '/query-loop.php';
+require_once __DIR__ . '/post-template.php';
 //require_once __DIR__ . '/post-excerpt.php';
 //require_once __DIR__ . '/post-content.php';
 require_once __DIR__ . '/template-part.php';
@@ -26,7 +28,7 @@ require_once __DIR__ . '/template-part.php';
 require_once __DIR__ . '/tag-cloud.php';
 
 /**
- * Hook into register_block_types_args before WP_Block_Supports
+ * Hook into register_block_type_args before WP_Block_Supports
  */
 add_filter( 'register_block_type_args', 'sb_register_block_type_args', 9 );
 
@@ -40,7 +42,7 @@ function sb_register_block_type_args( $args ) {
     $args = sb_maybe_override_block(  $args,'core/query-pagination', 'render_block_core_query_pagination');
     $args = sb_maybe_override_block(  $args,'core/query-pagination-numbers', 'render_block_core_query_pagination_numbers');
 
-    $args = sb_maybe_override_block(  $args,'core/query-loop', 'render_block_core_query_loop' );
+    $args = sb_maybe_override_block(  $args,'core/post-template', 'render_block_core_post_template' );
     $args = sb_maybe_override_block(  $args,'core/post-excerpt', 'render_block_core_post_excerpt' );
     $args = sb_maybe_override_block(  $args,'core/post-content', 'render_block_core_post_content' );
     $args = sb_maybe_override_block(  $args,'core/template-part', 'render_block_core_template_part' );

@@ -17,6 +17,7 @@ function sb_maybe_override_block($args, $blockname, $render_callback)
     if ($blockname == $args['name'] && function_exists($sb_render_callback)) {
         if ('gutenberg_' . $render_callback == $args['render_callback']) {
             $args['render_callback'] = $sb_render_callback;
+
         }
     }
     return $args;

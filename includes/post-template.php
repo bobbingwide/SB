@@ -17,7 +17,7 @@
  * @param $block
  * @return string
  */
-function sb_render_block_core_query_loop( $attributes, $content, $block ) {
+function sb_render_block_core_post_template( $attributes, $content, $block ) {
     //bw_trace2();
     $limit = null;
     $className = isset( $attributes['className'] ) ? $attributes['className'] : null;
@@ -49,9 +49,9 @@ function sb_render_block_core_query_loop( $attributes, $content, $block ) {
         //bw_trace2( $block->context, "block context", false  );
         $attributes['offset'] = $offset;
         $attributes['limit' ] = $limit;
-        $html .= sb_render_block_core_query_loop_main_query( $attributes, $content, $block );
+        $html .= sb_render_block_core_post_template_main_query( $attributes, $content, $block );
     } else {
-        $html .= gutenberg_render_block_core_query_loop($attributes, $content, $block);
+        $html .= gutenberg_render_block_core_post_template($attributes, $content, $block);
     }
     return $html;
 }
@@ -65,14 +65,14 @@ function sb_render_block_core_query_loop( $attributes, $content, $block ) {
  *
  * @return string Returns the output of the query, structured using the layout defined by the block's inner blocks.
  */
-function sb_render_block_core_query_loop_main_query( $attributes, $content, $block ) {
+function sb_render_block_core_post_template_main_query( $attributes, $content, $block ) {
 
     global $wp_query;
 
     $classnames = '';
-    if ( isset( $block->context['layout'] ) && isset( $block->context['query'] ) ) {
-        if ( isset( $block->context['layout']['type'] ) && 'flex' === $block->context['layout']['type'] ) {
-            $classnames = "is-flex-container columns-{$block->context['layout']['columns']}";
+    if ( isset( $block->context['displayLayout'] ) && isset( $block->context['query'] ) ) {
+        if ( isset( $block->context['displayLayout']['type'] ) && 'flex' === $block->context['displayLayout']['type'] ) {
+            $classnames = "is-flex-container columns-{$block->context['displayLayout']['columns']}";
         }
     }
 
