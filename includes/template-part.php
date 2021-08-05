@@ -12,10 +12,12 @@
  *
  * @return string The render.
  */
-function sb_render_block_core_template_part( $attributes ) {
+function sb_render_block_core_template_part( $attributes, $content, $block ) {
     static $seen_ids = array();
     bw_trace2();
     bw_backtrace();
+
+
 
     $template_part_id = null;
     $content          = null;
@@ -74,7 +76,7 @@ function sb_render_block_core_template_part( $attributes ) {
         //print_r( $attributes );
         return sprintf(
         /* translators: %s: Template part slug. */
-            __( 'Template part has been deleted or is unavailable: %s' ),
+            __( 'Template part is unavailable: %s' ),
             $attributes['slug']
         );
     }
