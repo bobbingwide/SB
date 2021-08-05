@@ -1,30 +1,32 @@
 
 <!-- wp:query {"queryId":6,"query":{"perPage":1,"pages":0,"offset":0,"postType":"bigram","categoryIds":[],"tagIds":[],"order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"layout":{"type":"list","columns":2}} -->
-<!-- wp:query-loop {"className": "sb hero" } -->
+<!-- wp:post-template {"className": "sb hero" } -->
 
 <!-- wp:post-featured-image {"isLink":true,"align":"wide"} /-->
 <!-- wp:post-title {"isLink":true} /-->
 <!-- wp:post-content /-->
 
 <div class="entry-footer">
-[bw_fields _seen_before]
-<!-- wp:post-hierarchical-terms {"term":"category"} /-->
+<!-- wp:bigram/seen-before /-->
+
+    <!-- wp:post-hierarchical-terms {"term":"category"} /-->
 <!-- wp:post-hierarchical-terms {"term":"s-word"} /-->
 <!-- wp:post-hierarchical-terms {"term":"b-word"} /-->
 <p>Published: [bw_field post_date] | Last updated: [bw_field post_modified] [post-edit]</p>
 </div>
-<!-- /wp:query-loop -->
+<!-- /wp:post-template -->
 <!-- /wp:query -->
 
 <!-- wp:separator -->
 <hr class="wp-block-separator"/>
 <!-- /wp:separator -->
 
-<!-- wp:query {"queryId":3,"query":{"perPage":8,"pages":0,"offset":0,"postType":"bigram","categoryIds":[],"tagIds":[],"order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"layout":{"type":"flex","columns":4}} -->
-<!-- wp:query-loop {"className": "sb thumbnail" } -->
-<!-- wp:post-title {"isLink":true,"level":3,"fontSize":"medium"} /-->
+<!-- wp:query {"queryId":3,"query":{"perPage":8,"pages":0,"offset":0,"postType":"bigram","categoryIds":[],"tagIds":[],"order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"displayLayout":{"type":"flex","columns":4}} -->
+
+<!-- wp:post-template {"className": "sb thumbnail" } -->
 <!-- wp:post-featured-image {"isLink":true} /-->
-<!-- /wp:query-loop -->
+<!-- wp:post-title {"isLink":true,"level":3,"fontSize":"medium"} /-->
+<!-- /wp:post-template -->
 <!-- /wp:query -->
 
 <!-- wp:separator -->
@@ -32,9 +34,9 @@
 <!-- /wp:separator -->
 
 <!-- wp:query {"queryId":5,"query":{"perPage":60,"pages":0,"offset":16,"postType":"bigram","categoryIds":[],"tagIds":[],"order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true}} -->
-<!-- wp:query-loop {"className": "sb links" } -->
+<!-- wp:post-template {"className": "sb links" } -->
 <!-- wp:post-title {"level":4,"style":{"typography":{"lineHeight":1.4}},"fontSize":"small","isLink":true } /-->
-<!-- /wp:query-loop -->
+<!-- /wp:post-template -->
 <!-- wp:query-pagination-previous /-->
 <!-- wp:query-pagination-numbers /-->
 <!-- wp:query-pagination-next /-->
