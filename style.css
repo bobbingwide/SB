@@ -326,7 +326,7 @@ footer.wp-block-template-part a:hover {
 
 /**
  Styling for the main queries on the home page.
- */
+
 
 .wp-block-query-loop.is-flex-container.is-flex-container.columns-4.sb >li {
         width: 25%;
@@ -353,25 +353,34 @@ ul.sb.thumbnail li p {
     bottom: 0;
     margin-bottom: 0px;
 }
+*/
 
 ul.sb.thumbnail li h3 {
     font-weight: 300;
 }
-
+/*
 ul.sb.thumbnail li:hover h3 {
     z-index: 1;
     background-color: white;
     top: 70%;
 }
+*/
 
+/**
+ * Style the links with padding margin and a border
+ */
 ul.sb.links li {
 display: inline-block;
 }
 
 ul.sb.links h4 {
-display: inline-block;
-margin-right: 0.5em;
+    padding: 0.2em;
+    margin: 0.25em;
+    border: 1px solid lightgrey;
+    font-weight: 300;
 }
+
+
 
 /**
  Taxonomy terms styling - to make them look like luggage tags with a hole in pointy bit to the left.
