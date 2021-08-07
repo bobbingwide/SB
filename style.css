@@ -384,12 +384,13 @@ ul.sb.links h4 {
 
 /**
  Taxonomy terms styling - to make them look like luggage tags with a hole in pointy bit to the left.
+ <div class="taxonomy-s-word wp-block-post-terms"><a href="https://s.b/bigram/s-word/seize/" rel="tag">seize</a></div>
  */
-.wp-block-post-hierarchical-terms {
+.wp-block-post-terms {
     display: inline-block;
 }
 
-.wp-block-post-hierarchical-terms a {
+.wp-block-post-terms a {
     background-color: #767676;
     border-radius: 0 2px 2px 0;
     color: #fff;
@@ -402,7 +403,7 @@ ul.sb.links h4 {
     position: relative;
 }
 
-.wp-block-post-hierarchical-terms a:before {
+.wp-block-post-terms a:before {
     border-top: 10px solid transparent;
     border-right: 8px solid #767676;
     border-bottom: 10px solid transparent;
@@ -414,7 +415,7 @@ ul.sb.links h4 {
     width: 0;
 }
 
-.wp-block-post-hierarchical-terms a:after {
+.wp-block-post-terms a:after {
     background-color: #fff;
     border-radius: 50%;
     content: "";
@@ -465,6 +466,40 @@ a.wp-block-query-pagination-next:hover,
     color: #fff;
     background-color: #328DBD;
 }
+
+
+/**
+ Flow the metadates template part onto one line using CSS flex.
+  */
+.is-style-flexed p,
+span.post_modified {
+    font-size: var(--wp--preset--font-size--small);
+}
+
+.wp-block-post-date,
+span.post_modified {
+    margin: 0 10px 0 0;
+}
+
+div.wp-block-oik-sb-sb-post-edit-block {
+    margin: 0 0;
+}
+
+.is-style-flexed .wp-block-group {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.is-style-flexed p,
+.is-style-griddled p {
+    margin: 0 10px 0 0;
+}
+
+.wp-block-group.is-style-flexed {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
 
 
 
