@@ -18,6 +18,12 @@ function sb_render_block_core_post_author( $attributes, $content, $block ) {
     return $html;
 }
 
+/**
+ * Replaces the bigram author name with a Self Bio link.
+ *
+ * @param $html
+ * @return array|string|string[]
+ */
 function sb_replace_bigram_with_self_bio( $html ) {
 	$url = site_url( '/bigram/self-bio');
 	$link = sprintf( '<a href="%s">Self Bio</a>', $url );
