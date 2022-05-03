@@ -79,8 +79,25 @@ function sb_render_block_core_post_template_main_query( $attributes, $content, $
     $wrapper_attributes = get_block_wrapper_attributes( array( 'class' => $classnames ) );
 
     $content = '';
-    foreach ( $wp_query->posts as $index => $post ) {
+    $saved_post = $GLOBALS['post'];
+    //in_the_loop();
+    //global $wp_query;
+    //set_query_var( 'in_the_loop', ;
+    //$wp_query->in_the_loop = true;
+	//global $wp_actions;
+
+    //foreach ( $wp_query->posts as $index => $post ) {
+    $index = 0;
+    while ( $wp_query->have_posts() ) {
+        $wp_query->the_post();
+
+
+
+    	//$GLOBALS['post'] = $post;
+    	//$wp_actions['the_post'] = 0;
         if ( $index >= $attributes['offset'] && $index < $attributes['limit']) {
+        	//$content = get_the_content( null, false, $post );
+            $post = get_post();
             $block_content = (
             new WP_Block(
                 $block->parsed_block,
@@ -92,7 +109,11 @@ function sb_render_block_core_post_template_main_query( $attributes, $content, $
             )->render(array('dynamic' => false));
             $content .= "<li>{$block_content}</li>";
         }
+        $index++;
     }
+	$GLOBALS['post'] = $saved_post;
+	//$wp_query->in_the_loop = true;
+	//set_query_var( 'in_the_loop', true );
 
     return sprintf(
         '<ul %1$s>%2$s</ul>',
