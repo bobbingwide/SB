@@ -1,6 +1,7 @@
 {
-	"version": 1,
+	"version": 2,
 	"settings": {
+		"appearanceTools": true,
 
 			"color": {
 				"gradients": [ ],
@@ -93,7 +94,8 @@
 					}]
 			},
 			"spacing": {
-				"customPadding": true
+				"customPadding": true,
+				"blockGap": false
 			},
 			"typography": {
 				"customLineHeight": true,
@@ -156,6 +158,9 @@
 		"color": {
 			"text": "var(--wp--preset--color--foreground)",
 			"background": "var(--wp--preset--color--background)"
+		},
+		"spacing": {
+			"blockGap": "0px"
 		},
 
 		"typography": {
