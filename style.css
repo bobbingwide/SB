@@ -4,23 +4,23 @@ Theme URI: https://seriouslybonkers.com
 Author: Herb Miller
 Description: Second Byte: Seriously Bonker's experimental Full Site Editing theme
 Requires at least: 5.7
-Tested up to: 5.7
+Tested up to: 5.9.3
 Requires PHP: 5.6
-Version: 0.1.0
+Version: 0.2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sb
 
-SB WordPress Theme, (C) 2021 WordPress.org
+SB WordPress Theme, (C) Bobbing Wide 2021, 2022
 SB is distributed under the terms of the GNU GPL.
 
 Some of the styling comes from the original theme - Genesis-SB - Specially Built.
-See also experimental-theme.json, which started as pretty empty and has
+See also theme.json, which started as pretty empty and has
 been updated by copying and cobbling values from Fizzie and other experimental FSE themes.
 
 The CSS in this file is basically anything that's needed to style the site for the following reasons:
 
-1. It's not something that can be done in experimental-theme.json
+1. It's not something that can be done in theme.json
 2. It's not something that can be done customizing the blocks
 3. It might be possible by 1. or 2. but I can't find out how to do it.
 4. It could be unnecessary CSS that hasn't yet been identified as unnecessary.
@@ -105,6 +105,9 @@ textarea {
 /* # Site Navigation
 ---------------------------------------------------------------------------------------------------- */
 
+nav.mainmenu {
+    margin-bottom: 20px
+}
 /*
 
 */
@@ -232,6 +235,13 @@ nav nav .wp-block-navigation__container a {
     padding: 0 22px !important;
 }
 
+.wp-block-navigation.is-vertical ul li a {
+    padding-left: 0px !important;
+    color: var( --wp--preset--color--link);
+}
+
+
+
 .wp-block-navigation ul ul a {
     color: #333;
 }
@@ -332,7 +342,8 @@ footer.wp-block-template-part {
     color: #e9e9ee;
 }
 
-footer.wp-block-template-part a {
+footer.wp-block-template-part a,
+footer .wp-block-navigation.is-vertical ul li a {
     color: #e9e9c8;
 }
 
