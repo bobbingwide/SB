@@ -106,26 +106,26 @@ require_once __DIR__ . '/includes/block-overrides.php';
  * @return array reordered array of posts
  */
 function genesis_sb_the_posts( $posts, $query ) {
-    bw_trace2( count( $posts ), "count(posts)", true );
+    bw_trace2( count( $posts ), "count(posts)", true, BW_TRACE_VERBOSE );
 
     $images = array();
     $non_images = array();
     foreach ( $posts as $post ) {
         $thumbnail = get_post_thumbnail_id( $post );
         if ( $thumbnail > 0 ) {
-            bw_trace2( $thumbnail, "post: ". $post->ID, false );
+            bw_trace2( $thumbnail, "post: ". $post->ID, false, BW_TRACE_VERBOSE  );
             $images[] = $post;
 
         } else {
             $non_images[] = $post;
         }
     }
-    bw_trace2( $images, "images: " . count( $images ), false );
-    bw_trace2( $non_images, "non_images: " . count( $non_images ), false );
+    bw_trace2( $images, "images: " . count( $images ), false, BW_TRACE_VERBOSE  );
+    bw_trace2( $non_images, "non_images: " . count( $non_images ), false, BW_TRACE_VERBOSE  );
     $posts = array_merge( $images, $non_images );
     $query->featured_images = count( $images );
-    bw_trace2( $query, "query", false );
-    bw_trace2( count( $posts ), "count(posts)", false );
+    bw_trace2( $query, "query", false, BW_TRACE_VERBOSE  );
+    bw_trace2( count( $posts ), "count(posts)", false, BW_TRACE_VERBOSE  );
 
     return $posts;
 }
