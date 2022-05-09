@@ -3,7 +3,6 @@
 Extra CSS to style the WP_DEBUG divs
 */
 
-
 div.wp-site-blocks > div.WP_DEBUG:first-of-type {
     background-color: white;
     position: absolute;
