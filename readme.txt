@@ -3,53 +3,62 @@ Contributors: bobbingwide, vsgloik
 Donate link: https://www.oik-plugins.com/oik/oik-donate/
 Tags: blocks, FSE, Gutenberg
 Requires at least: 5.7
-Tested up to: 5.7
-Version: 0.1.0
+Tested up to: 5.9.3
+Version: 0.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Second Byte: Seriously Bonkers' experimental Full Site Editing theme.
 
 == Description ==
-SB is an experimental theme attempting to implement Full Site Editing (FSE) with Gutenberg blocks.
+SB is a Full Site Editing (FSE) theme with Gutenberg blocks.
 
 The "Second Byte" theme is required to replace the "Specially Built" Genesis-SB theme that is used in [seriouslybonkers.com](https://seriouslybonkers.com).
 
-
 Requirements:
 1. Implement Full Site Editing.
-2. Same look and feel as the Genesis-SB theme.
+2. Similar look and feel as the Genesis-SB theme.
 3. Find out what bits are missing from and/or not working in Gutenberg FSE.
 4. Implement on seriouslybonkers.com when stable.
-
 
 Contents:
 
 IMPLEMENTED: 
 
-The `block-templates` developed so far are:
+The `templates` developed so far are:
 
+* 404.html - Not found page
 * index.html - default template when no others found
-* singular.html - Single bigram page - under construction
-* 404.html - Not found page - under construction
+* page-sb.html - Custom template for the react-SB page
+* page-submit-bigram.html - Custom template for the Submit Bigram page
+* singular-one-column.html - Custom template for one column main content, with sidebar
+* singular.html - Single bigram page 
 
-The `block-template-parts` are:
+The `parts` are:
 
+* 404-body.html - Not found main content
+* 404.html - Not found main content and sidebar
 * body-and-sidebar.html - main content and sidebar
-* footer - Final full width footer
+* footer.html - Final full width footer
 * header.html - Displays the header: site logo, site title and tagline and search box
 * home-body.html - the main content - still under construction
 * main-menu.html - the primary navigation menu
+* metadates.html - post date and last update date
+* one-column-and-sidebar.html - custom template part 
+* one-column.html - one column featured image and content
 * page-footer.html - 3 column footer widgets
+* post-author.html - styled post author block for singular
+* search-banter.html - search banter for the search template
 * sequentially-biased.html - sidebar widget
 * sidebar.html - sidebar widgets - under construction
+* singular-and-sidebar.html - main content and sidebar
+* singular.html - main content for singular
 * site-building.html - sidebar widget
 * social-links.html - at the bottom of the footer
 * structured-breakdown.html - first widget in the sidebar
 * summed-by.html - sidebar widget
 
-
-home-body.html now consists of three query blocks which are overriden in server side rendering
+home-body.html consists of three query blocks which are overriden in server side rendering
 to deliver:
 
 - Hero section - query block to display the first bigram for the page
@@ -58,42 +67,23 @@ to deliver:
 
 followed by a pagination section.
 
+NOT NECESSARY:
 
-
-PLANNED:
-
-* Several templates
-* Quite a few template parts
-
-The planned `block-templates` are:
-
+The following `templates` were planned but deemed to be unnecessary since index.html
+satisfies the requirements except perhaps for a breadcrumbs block.
 
 * archive.html - generic template used for archives: author, taxonomy, date, tag 
 * category.html - used to display the Category archive
 * date.html - date base archive
 * home.html -  used for Blog Posts index page or Posts Shown on Front (when front-page not implemented)
-* page-sb.html - displays the reactSB page
-* search.html - Display search results
-* single-bigram.html - display for a single bigram CPT
 * taxonomy.html - used to display taxonomy terms
 
-
 See the template visualization: https://developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04.png
-
-The planned `block-template-parts` are:
-
-* query block to display the groups of 4 featured images in a grid
-* query block to display links to other posts
-* pagination
-* more widgets for the sidebar: Sequentially biased, Summed by, Site building
-* Seen before metadata
-* Tags 
-* Published and last update date, with Edit link
 
 == Installation ==
 
 * Install and activate pre-requisite plugins.
-* Either install Gutenberg 10.3.0-rc1 or higher or install and build the latest Gutenberg source.
+* Either install Gutenberg 13.1.0 or higher or install and build the latest Gutenberg source.
 * Activate Gutenberg.
 * Install and activate the SB theme, as you would install any other theme. Full Site Editing will be enabled automatically.
 * For some of the templates and template parts to work properly you will need to install and activate the pre-requisite plugins.
@@ -106,9 +96,52 @@ Pre-requisite plugins: see also Notes
 * [oik-a2z](https://github.com/bobbingwide/oik-a2z)
 * [sb-breadcrumbs-block](https://github.com/bobbingwide/sb-breadcrumbs-block)
 * [bigram](https://github.com/bobbingwide/bigram)
- 
+
 
 == Change Log ==
+= 0.2.0 = 
+* Added: Add Published, Last Updated and (Edit) link to hero post #1
+* Added: Add bigram/search-banter in search-banter template part for body-and-sidebar #24
+* Added: Add custom template singular-one-column.html #27
+* Added: Add page-sb template #25
+* Added: Add page-submit-bigram #27
+* Added: Implement 404.html template #22
+* Changed: Add $content and $block params to sb_render_block_core_template_part
+* Changed: Add menu to Info widget area
+* Changed: Add spacer before post-author. Set avatarSize to 70 pixels #19
+* Changed: Added query title and breadcrumbs blocks #1
+* Changed: Cater for changes in Gutenberg 12.3.0 #13
+* Changed: Docblock #19
+* Changed: Eliminate comma separator between post terms #20
+* Changed: Fix layout for second and third query blocks #13
+* Changed: Implement full main-menu #21
+* Changed: Improve menu styling #21
+* Changed: Improve page-footer layout. #1
+* Changed: Improve styling of vertical menus #23
+* Changed: Improve the Hero post entry-footer layout #1
+* Changed: Make menu behave a bit better
+* Changed: Override the post-author block #19
+* Changed: Put featured image and post title/content in 2 columns. Refactor pagination
+* Changed: Refactor experimental-theme.json to theme.json #17
+* Changed: Refactor home-body.html for Gutenberg 13.1.0
+* Changed: Refactor query-loop to post-template #16
+* Changed: Refactor query-loop to post-template #16. 
+* Changed: Remove commented out code #13
+* Changed: Rename block-templates and block-template-parts #26 
+* Changed: Replace bw_field _seen_before with bigram/seen-before #10
+* Changed: Replace hardcoded debug with sb-debug-block
+* Changed: Restyle the home page. Lose the hovering stuff in the middle section. Adjust font weights
+* Changed: Rework metadates as row with outer group #20
+* Changed: Rework singular for better alignment #20
+* Changed: Set shouldSyncIcon attribute for site-logo #1
+* Changed: Set tagName to aside to enable styling
+* Changed: Singular template with metadates and post-author template parts #20
+* Changed: Style metadates using flex. Style tags to look like tags. #20
+* Changed: Style the pagination for the main query #15
+* Changed: Update navigation block attributes
+* Changed: set theme.json version to 2. Set blockGap to 0 pixels
+* Fixed: bigram issue #21
+
 = 0.1.0 = 
 * Added: Implement server overrides for the 3 queries used on the home page,[github bobbingwide SB issues 13]
 * Added: Initial pagination block for the home page,[github bobbingwide SB issues 13]
@@ -186,7 +219,7 @@ I started creating it for the third call for testing for the #fse-outreach-exper
 [FSE Program Testing Call #3: Create a fun & custom 404 page](https://make.wordpress.org/test/2021/03/09/fse-program-testing-call-3-create-a-fun-custom-404-page/)
 
 In some respects, even though it should consist of fewer templates and templates parts, SB will be harder to achieve
-since there is some PHP logic for the home page which I imagine will be more than tricky to implement.
+than other FSE themes since there is some PHP logic for the home page which I imagine will be more than tricky to implement.
 I believe I will need to find a method to override server side logic for the query loop blocks.
 
 Now I think about it, I reckon I can implement a solution. 
@@ -204,12 +237,12 @@ The Silver Bullet project itself didn't fail. But it wasn't completed either; th
 
 We had a lot of fun on the project, and even more fun collecting the SB's that now make up the fascinating website.
 
-Silver Bullet was being developed using bleeding edge technology. 30 years on Second Byte is "still bleeding".
+Silver Bullet was being developed using bleeding edge technology. 31 years on Second Byte is "still bleeding".
 
 
 
 == Copyright ==
-(C) Copyright Herb Miller, Bobbing Wide 2021
+(C) Copyright Herb Miller, Bobbing Wide 2021, 2022
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
