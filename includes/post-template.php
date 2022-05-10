@@ -80,10 +80,12 @@ function sb_render_block_core_post_template_main_query( $attributes, $content, $
 
     $content = '';
     $index = 0;
+    global $more;
     while ( $wp_query->have_posts() ) {
         $wp_query->the_post();
         if ( $index >= $attributes['offset'] && $index < $attributes['limit']) {
             $post = get_post();
+            $more=-1;
             $block_content = (
             new WP_Block(
                 $block->parsed_block,
