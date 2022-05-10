@@ -14,10 +14,9 @@
  */
 function sb_render_block_core_template_part( $attributes, $content, $block ) {
     static $seen_ids = array();
-    bw_trace2();
-    bw_backtrace();
-
-
+    // The $block object is often too large to trace because of the pointer to the registry.
+    bw_trace2( $attributes, 'attributes', false , BW_TRACE_VERBOSE );
+    //bw_backtrace();
 
     $template_part_id = null;
     $content          = null;
