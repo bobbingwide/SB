@@ -5,7 +5,7 @@
 * Tags: blocks, FSE, Gutenberg
 * Requires at least: 5.7
 * Tested up to: 5.9.3
-* Version: 0.2.0
+* Version: 0.2.1
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -100,6 +100,14 @@ satisfies the requirements except perhaps for a breadcrumbs block.
 
 
 ## Change Log 
+# 0.2.1 
+* Changed: Remove unnecessary query-no-results block #32
+* Changed: Reduce work done in genesis_sb_the_posts() #32
+* Added: Override navigation-link block #30
+* Tested: With WordPress 5.9.3
+* Tested: With PHP 8.0
+* Tested: With Gutenberg 13.1.0
+
 # 0.2.0 
 * Added: Add Published, Last Updated and (Edit) link to hero post #1
 * Added: Add bigram/search-banter in search-banter template part for body-and-sidebar #24
@@ -182,24 +190,14 @@ Responsibility for responsive styling is left to Gutenberg / WordPress core func
 
 ### Block overrides 
 
-SB may contain a number of overrides to Gutenberg server rendered blocks which didn't behave the way I expected.
-These overrides should continue to work even when the PRs to fix the bugs have been implemented.
+SB contains a number of overrides to Gutenberg server rendered blocks which don't behave the way I want.
 
-Implemented in SB:
-* None yet.
+* core/post-template - overrides the query loop to implement multi part main query processing
+* core/post-author - Changes the author name to a link to Self Bio and implements SB links
+* core/template-part - handle recursion, don't call wpautop()
+* core/navigation-link - replaces hardcoded links with site_url()
+* core/tag-cloud - possibly unnecessarily overridden
 
-
-For reference, improvement areas in Fizzie included:
-
-* core/query-loop - uses main query when used outside of core/query
-* core/query-pagination - uses the main query when used outside of core/query
-* core/block - handle recursion
-* core/post-hierarchical-terms - cater for invalid taxonomy
-* core/navigation-link - set current-menu-item class for current request
-* core/navigation - tbc
-* core/template-part - handle recursion
-* core/post-content - handle recursion
-* core/post-excerpt - append missing `</div>`
 
 
 ## References 
@@ -214,19 +212,18 @@ For some other FSE themes see [WP-a2z FSE themes](https://blocks.wp-a2z.org/oik-
 
 ## Brief development history 
 
-SB is my second attempt at creating a Full Site Editing theme using Gutenberg. Hence the subtitle Second Byte.
+SB was my second attempt at creating a Full Site Editing theme using Gutenberg. Hence the subtitle Second Byte.
 
-I started creating it for the third call for testing for the #fse-outreach-experiment
+I started creating it in March 2021 for the third call for testing for the #fse-outreach-experiment
 * [FSE Program Testing Call #3: Create a fun & custom 404 page](https://make.wordpress.org/test/2021/03/09/fse-program-testing-call-3-create-a-fun-custom-404-page/)
 
-In some respects, even though it should consist of fewer templates and templates parts, SB will be harder to achieve
-than other FSE themes since there is some PHP logic for the home page which I imagine will be more than tricky to implement.
-I believe I will need to find a method to override server side logic for the query loop blocks.
+It's now over a year since that call and I still haven't completed all the logic for the 404 page.
 
-Now I think about it, I reckon I can implement a solution.
-I supposed I'd better design it first.
+In some respects, even though it might have required fewer templates and templates parts than Fizzie, I reckoned SB would be harder to achieve
+than other FSE themes. This was primarily due to the PHP logic for the home page, which I imagined would be more than tricky to implement.
 
-So I'm going to stop writing this and continue with the "programmming".
+There was also logic for the search results, the seen before count and integration with react-SB.
+
 
 BTW. The Seriously Bonkers site is a direct spin off from a fun distraction played by members of a development team on a project started 30 years ago called Silver Bullet.
 
