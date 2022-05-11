@@ -94,7 +94,6 @@ add_action( 'init', 'sb_init', 20);
 
 require_once __DIR__ . '/includes/block-overrides.php';
 
-
 /**
  * Filters the_posts
  *
@@ -106,12 +105,23 @@ require_once __DIR__ . '/includes/block-overrides.php';
  * @return array reordered array of posts
  */
 function genesis_sb_the_posts( $posts, $query ) {
+   if ( is_admin()) {
+        return $posts;
+    }
+    $post_type = $query->get( 'post_type');
+    if ( is_scalar( $post_type) && $post_type !== 'bigram' ) {
+        return $posts;
+    }
+
     bw_trace2( count( $posts ), "count(posts)", true, BW_TRACE_VERBOSE );
 
     $images = array();
     $non_images = array();
     foreach ( $posts as $post ) {
-        $thumbnail = get_post_thumbnail_id( $post );
+        $thumbnail = 0;
+        if ( $post->post_type === 'bigram') {
+            $thumbnail = get_post_thumbnail_id($post);
+        }
         if ( $thumbnail > 0 ) {
             bw_trace2( $thumbnail, "post: ". $post->ID, false, BW_TRACE_VERBOSE  );
             $images[] = $post;
@@ -124,7 +134,7 @@ function genesis_sb_the_posts( $posts, $query ) {
     bw_trace2( $non_images, "non_images: " . count( $non_images ), false, BW_TRACE_VERBOSE  );
     $posts = array_merge( $images, $non_images );
     $query->featured_images = count( $images );
-    bw_trace2( $query, "query", false, BW_TRACE_VERBOSE  );
+    bw_trace2( $query, "query", false, BW_TRACE_DEBUG );
     bw_trace2( count( $posts ), "count(posts)", false, BW_TRACE_VERBOSE  );
 
     return $posts;
