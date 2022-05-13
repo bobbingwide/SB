@@ -10,7 +10,12 @@
  * @return string
  */
 function sb_render_block_core_post_author( $attributes, $content, $block ) {
-    $html = gutenberg_render_block_core_post_author( $attributes, $content, $block );
+    // $html = gutenberg_render_block_core_post_author( $attributes, $content, $block );
+    if ( function_exists( 'gutenberg_render_block_core_post_author') ) {
+        $html = gutenberg_render_block_core_post_author($attributes, $content, $block);
+    } else {
+        $html = render_block_core_post_author($attributes, $content, $block);
+    }
     if ( function_exists( 'bigram_the_content') ) {
     	$html=bigram_the_content( $html );
     }
