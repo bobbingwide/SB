@@ -3,8 +3,8 @@ Contributors: bobbingwide, vsgloik
 Donate link: https://www.oik-plugins.com/oik/oik-donate/
 Tags: blocks, FSE, Gutenberg
 Requires at least: 5.7
-Tested up to: 5.9.3
-Version: 0.2.1
+Tested up to: 6.0.1
+Version: 0.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -99,6 +99,13 @@ Pre-requisite plugins: see also Notes
 
 
 == Change Log ==
+= 0.3.0 =
+* Changed: Cater for Gutenberg not activated #34
+* Changed: Wrap shortcodes in a block #35
+* Changed: Fix drop down menu styling wrapping issues #33
+* Tested: With WordPress 6.0.1
+* Tested: With PHP 8.0 
+
 = 0.2.1 =
 * Changed: Remove unnecessary query-no-results block #32
 * Changed: Reduce work done in genesis_sb_the_posts() #32
