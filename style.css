@@ -538,6 +538,11 @@ div.wp-block-oik-sb-sb-post-edit-block {
     padding-bottom: 0px;
 }
 
+@media screen and  (max-width: 782px ) {
+    .wp-site-blocks {
+        margin: 0px 2%;
+    }
+}
 
 
 
