@@ -143,12 +143,9 @@ nav nav .wp-block-navigation__container a {
     padding: 0 22px;
     margin: 0 auto;
     /* color: #163F55; */
-
-    padding: 0 22px;
-    margin: 0 auto;
     position: relative;
-    display: block;
-    height: 28px;
+    /* display: block; */
+    min-height: 28px;
     cursor: pointer;
     text-decoration: none;
     /* color: #31454E; */
@@ -170,7 +167,7 @@ nav nav .wp-block-navigation__container a {
     width: 200px;
     z-index: 99;
     display: block;
-    width: 250px !important;
+
     font-size: 16px;
 }
 
@@ -244,6 +241,13 @@ nav nav .wp-block-navigation__container a {
 
 .wp-block-navigation ul ul a {
     color: #333;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .has-child .submenu-container,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .has-child .wp-block-navigation__submenu-container
+{
+    padding-left: 22px;
+    padding-right: 22px;
 }
 /*   .nav-primary */
 nav nav.wp-block-navigation a:hover,
