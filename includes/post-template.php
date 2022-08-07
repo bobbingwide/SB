@@ -51,7 +51,11 @@ function sb_render_block_core_post_template( $attributes, $content, $block ) {
         $attributes['limit' ] = $limit;
         $html .= sb_render_block_core_post_template_main_query( $attributes, $content, $block );
     } else {
-        $html .= gutenberg_render_block_core_post_template($attributes, $content, $block);
+        if ( function_exists('gutenberg_render_block_core_post_template')) {
+            $html .= gutenberg_render_block_core_post_template($attributes, $content, $block);
+        } else {
+            $html .= render_block_core_post_template($attributes, $content, $block);
+        }
     }
     return $html;
 }
