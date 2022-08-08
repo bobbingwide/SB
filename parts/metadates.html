@@ -3,22 +3,22 @@
 <!-- /wp:separator -->
 
 <!-- wp:group {"layout":{"inherit":false}} -->
-<div class="wp-block-group"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
-    <div class="wp-block-group"><!-- wp:paragraph {"fontSize":"small"} -->
-        <p class="has-small-font-size">Published: </p>
-        <!-- /wp:paragraph -->
+<div class="wp-block-group"><!-- wp:group {"layout":{"type":"flex","orientation":"vertical"}} -->
+    <div class="wp-block-group"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+        <div class="wp-block-group"><!-- wp:paragraph {"fontSize":"small"} -->
+            <p class="has-small-font-size">Published:</p>
+            <!-- /wp:paragraph -->
 
-        <!-- wp:post-date {"fontSize":"small"} /-->
+            <!-- wp:post-date {"fontSize":"small"} /--></div>
+        <!-- /wp:group -->
 
-        <!-- wp:paragraph {"fontSize":"small"} -->
-        <p class="has-small-font-size">&nbsp;</p>
-        <!-- /wp:paragraph -->
+        <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+        <div class="wp-block-group"><!-- wp:paragraph {"fontSize":"small"} -->
+            <p class="has-small-font-size"> Last updated:</p>
+            <!-- /wp:paragraph -->
 
-        <!-- wp:paragraph {"fontSize":"small"} -->
-        <p class="has-small-font-size"> Last updated:</p>
-        <!-- /wp:paragraph -->
-
-        <!-- wp:oik-block/fields {"fields":"post_modified"} /-->
+            <!-- wp:oik-block/fields {"fields":"post_modified"} /--></div>
+        <!-- /wp:group -->
 
         <!-- wp:oik-sb/sb-post-edit-block {"fontSize":"small"} /--></div>
     <!-- /wp:group --></div>
