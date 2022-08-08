@@ -5,7 +5,7 @@
 * Tags: blocks, FSE, Gutenberg
 * Requires at least: 5.7
 * Tested up to: 6.0.1
-* Version: 0.3.0
+* Version: 0.3.1
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -100,6 +100,12 @@ satisfies the requirements except perhaps for a breadcrumbs block.
 
 
 ## Change Log 
+# 0.3.1 
+* Changed: Restructure metadates for better display on narrow devices #33
+* Changed: Prevent Site building menu from switching to hamburger on mobile #33
+* Changed: Add margin for narrow devices #33
+* Tested: With Gutenberg 13.8.1
+
 # 0.3.0 
 * Changed: Cater for Gutenberg not activated #34
 * Changed: Wrap shortcodes in a block #35
