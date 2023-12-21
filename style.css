@@ -4,9 +4,9 @@ Theme URI: https://seriouslybonkers.com
 Author: Herb Miller
 Description: Second Byte: Seriously Bonker's experimental Full Site Editing theme
 Requires at least: 5.7
-Tested up to: 6.4.1
+Tested up to: 6.4.2
 Requires PHP: 5.6
-Version: 0.3.2
+Version: 0.4.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sb
@@ -542,6 +542,28 @@ div.wp-block-oik-sb-sb-post-edit-block {
     .wp-site-blocks {
         margin: 0px 2%;
     }
+}
+
+/**
+ paragraph and/or group? aiprompt and airesponse styling
+ */
+
+.is-style-aiprompt {
+    border: 1px solid #a1a1a1;
+    border-radius: 12px;
+    font-family: var( --wp--preset--font-family--system-serif, 'Serif' );
+    background-color: var( --wp--preset--color--base-2, #efefef );
+    padding: var( --wp--preset--spacing--10, 10px );
+    margin-bottom: 5px;
+}
+
+.is-style-airesponse {
+    border-radius: 2px;
+    background-color: var( --wp--preset--color--base-2, #efefef);
+    border: 2px solid grey;
+    font-family: var( --wp--preset--font-family--system-serif, 'Serif' );
+    padding: var( --wp--preset--spacing--10, 10px );
+    margin-bottom: 5px;
 }
 
 

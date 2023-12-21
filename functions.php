@@ -164,3 +164,43 @@ function sb_post_edit( $attrs, $content, $tag ) {
     }
     return $link;
 }
+
+
+/**
+ * Register custom block styles
+ *
+ * @since Twenty Twenty-Four 1.0
+ * @return void
+ */
+function sb_block_styles() {
+
+	register_block_style(
+		'core/paragraph',
+		array(
+			'name'        =>'aiprompt',
+			'label'       =>__( 'AI prompt', 'sb' )
+		)
+	);
+	register_block_style(
+		'core/paragraph',
+		array(
+			'name'        =>'airesponse',
+			'label'       =>__( 'AI response', 'sb' )
+		)
+	);
+	register_block_style(
+		'core/group',
+		array(
+			'name'        =>'aiprompt',
+			'label'       =>__( 'AI prompt', 'sb' )
+		)
+	);
+	register_block_style(
+		'core/group',
+		array(
+			'name'        =>'airesponse',
+			'label'       =>__( 'AI response', 'sb' )
+		)
+	);
+}
+add_action( 'init', 'sb_block_styles' );

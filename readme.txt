@@ -3,8 +3,8 @@ Contributors: bobbingwide, vsgloik
 Donate link: https://www.oik-plugins.com/oik/oik-donate/
 Tags: blocks, FSE, Gutenberg
 Requires at least: 5.7
-Tested up to: 6.4.1
-Version: 0.3.2
+Tested up to: 6.4.2
+Version: 0.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -99,6 +99,12 @@ Pre-requisite plugins: see also Notes
 
 
 == Change Log ==
+= 0.4.0 =
+* Changed: Add AI prompt and response. Adjust featured image for singular.html #37
+* Tested: With WordPress 6.4.2
+* Tested: With Gutenberg 17.2.3
+* Tested: With PHP 8.0, 8.1, 8.2 and 8.3 
+
 = 0.3.2 = 
 * Changed: Support PHP 8.1, PHP 8.2 and PHP 8.3 #36 
 * Tested: With WordPress 6.4.1
