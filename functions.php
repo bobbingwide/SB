@@ -189,6 +189,13 @@ function sb_block_styles() {
 		)
 	);
 	register_block_style(
+		'core/paragraph',
+		array(
+			'name'        =>'revisedprompt',
+			'label'       =>__( 'Revised prompt', 'sb' ),
+		)
+	);
+	register_block_style(
 		'core/group',
 		array(
 			'name'        =>'aiprompt',
