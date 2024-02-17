@@ -169,7 +169,7 @@ function sb_post_edit( $attrs, $content, $tag ) {
 /**
  * Register custom block styles
  *
- * @since Twenty Twenty-Four 1.0
+ * @since sb v0.4.0
  * @return void
  */
 function sb_block_styles() {
@@ -211,3 +211,32 @@ function sb_block_styles() {
 	);
 }
 add_action( 'init', 'sb_block_styles' );
+
+	/**
+	 * Enqueue custom block stylesheets
+	 *
+	 * @since sb v0.5.0
+	 * @return void
+	 */
+	function sb_block_stylesheets() {
+		/**
+		 * The wp_enqueue_block_style() function allows us to enqueue a stylesheet
+		 * for a specific block. These will only get loaded when the block is rendered
+		 * (both in the editor and on the front end), improving performance
+		 * and reducing the amount of data requested by visitors.
+		 *
+		 * See https://make.wordpress.org/core/2021/12/15/using-multiple-stylesheets-per-block/ for more info.
+		 */
+		wp_enqueue_block_style(
+			'core/paragraph',
+			array(
+				'handle' => 'sb-paragraph-style-aiprompt',
+				'src'    => get_theme_file_uri( 'css/paragraph-aiprompt.css' ),
+				'ver'    => wp_get_theme( get_template() )->get( 'Version' ),
+				'path'   => get_theme_file_path( 'css/paragraph-aiprompt.css' ),
+			)
+		);
+	}
+
+
+add_action( 'init', 'sb_block_stylesheets' );
