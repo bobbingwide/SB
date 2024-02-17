@@ -5,7 +5,7 @@
  * The home page displays results in 3 blocks
  *
  * 1. Hero block
- * 2. Thumbnail grid of up to 16 posts in full blocks of 4
+ * 2. Thumbnail grid of up to 32 posts in full blocks of 4
  * 3. Links
  * followed by a pagination block which is handled separately
  *
@@ -136,7 +136,7 @@ function sb_featured_images( $offset ) {
  * @param integer $maximum_rows we support
  * @return integer
  */
-function sb_full_rows( $total, $offset=0, $entries_per_row=4, $maximum_rows=4 ) {
+function sb_full_rows( $total, $offset=0, $entries_per_row=4, $maximum_rows=8 ) {
     $rows = intdiv( $total-$offset, $entries_per_row );
     $rows = min( $rows, $maximum_rows );
     return ( $rows * $entries_per_row ) + $offset;
