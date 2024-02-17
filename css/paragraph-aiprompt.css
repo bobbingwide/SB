@@ -1,0 +1,30 @@
+/**
+ paragraph and/or group? aiprompt and airesponse styling
+ */
+
+.is-style-aiprompt {
+    border: 1px solid #a1a1a1;
+    border-radius: 12px;
+    font-family: var( --wp--preset--font-family--system-serif, 'Serif' );
+    background-color: var( --wp--preset--color--base-2, #f7f7f7 );
+    padding: var( --wp--preset--spacing--10, 10px );
+    margin-bottom: 5px;
+}
+
+.is-style-airesponse {
+    border-radius: 2px;
+    background-color: var( --wp--preset--color--base-2, #f7f7f7);
+    border: 2px solid grey;
+    font-family: var( --wp--preset--font-family--system-serif, 'Serif' );
+    padding: var( --wp--preset--spacing--10, 10px );
+    margin-bottom: 5px;
+}
+
+.is-style-revisedprompt {
+    border: 1px solid #a1a1a1;
+    border-radius: 12px;
+    /*font-family: var( --wp--preset--font-family--open-sans, 'sans-serif' ); */
+    background-color: var( --wp--preset--color--base-2, #f7f7f7 );
+    padding: var( --wp--preset--spacing--10, 10px );
+    margin-bottom: 5px;
+}
