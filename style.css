@@ -4,14 +4,14 @@ Theme URI: https://seriouslybonkers.com
 Author: Herb Miller
 Description: Second Byte: Seriously Bonker's experimental Full Site Editing theme
 Requires at least: 5.7
-Tested up to: 6.4.2
+Tested up to: 6.4.3
 Requires PHP: 5.6
-Version: 0.4.0
+Version: 0.5.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sb
 
-SB WordPress Theme, (C) Bobbing Wide 2021, 2022
+SB WordPress Theme, (C) Bobbing Wide 2021-2024
 SB is distributed under the terms of the GNU GPL.
 
 Some of the styling comes from the original theme - Genesis-SB - Specially Built.
@@ -543,39 +543,3 @@ div.wp-block-oik-sb-sb-post-edit-block {
         margin: 0px 2%;
     }
 }
-
-/**
- paragraph and/or group? aiprompt and airesponse styling
- */
-
-.is-style-aiprompt {
-    border: 1px solid #a1a1a1;
-    border-radius: 12px;
-    font-family: var( --wp--preset--font-family--system-serif, 'Serif' );
-    background-color: var( --wp--preset--color--base-2, #efefef );
-    padding: var( --wp--preset--spacing--10, 10px );
-    margin-bottom: 5px;
-}
-
-.is-style-airesponse {
-    border-radius: 2px;
-    background-color: var( --wp--preset--color--base-2, #efefef);
-    border: 2px solid grey;
-    font-family: var( --wp--preset--font-family--system-serif, 'Serif' );
-    padding: var( --wp--preset--spacing--10, 10px );
-    margin-bottom: 5px;
-}
-
-.is-style-revisedprompt {
-    border: 1px solid #a1a1a1;
-    border-radius: 12px;
-    /*font-family: var( --wp--preset--font-family--open-sans, 'sans-serif' ); */
-    background-color: var( --wp--preset--color--base-2, #efefef );
-    padding: var( --wp--preset--spacing--10, 10px );
-    margin-bottom: 5px;
-
-}
-
-
-
-
