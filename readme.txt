@@ -4,7 +4,7 @@ Donate link: https://www.oik-plugins.com/oik/oik-donate/
 Tags: blocks, FSE, Gutenberg
 Requires at least: 5.7
 Tested up to: 6.4.2
-Version: 0.4.0
+Version: 0.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -97,8 +97,15 @@ Pre-requisite plugins: see also Notes
 * [sb-breadcrumbs-block](https://github.com/bobbingwide/sb-breadcrumbs-block)
 * [bigram](https://github.com/bobbingwide/bigram)
 
-
 == Change Log ==
+= 0.5.0 = 
+* Changed: Display up to 32 bigrams with thumbnails #38
+* Changed: Move paragraph styling to css/paragraph-aiprompt.css #38
+* Changed: Enqueue stylesheets for paragraph #38
+* Changed: Make the background colour a little lighter #38
+* Changed: Add is-style-revisedprompt #38
+* Changed: Adjust home page hero layout #38
+
 = 0.4.0 =
 * Changed: Add AI prompt and response. Adjust featured image for singular.html #37
 * Tested: With WordPress 6.4.2
@@ -264,7 +271,7 @@ Silver Bullet was being developed using bleeding edge technology. 31 years on Se
 
 
 == Copyright ==
-(C) Copyright Herb Miller, Bobbing Wide 2021, 2022
+(C) Copyright Herb Miller, Bobbing Wide 2021- 2024
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
