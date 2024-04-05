@@ -95,7 +95,7 @@
 			},
 			"spacing": {
 				"customPadding": true,
-				"blockGap": false
+				"blockGap": true
 			},
 			"typography": {
 				"customLineHeight": true,
@@ -160,7 +160,14 @@
 			"background": "var(--wp--preset--color--background)"
 		},
 		"spacing": {
-			"blockGap": "0px"
+			"blockGap": "0.2rem"
+		},
+		"blocks": {
+			"core/paragraph" : {
+				"spacing": {
+					"blockGap": "1rem"
+				}
+			}
 		},
 
 		"typography": {
