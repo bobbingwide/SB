@@ -108,10 +108,13 @@ function genesis_sb_the_posts( $posts, $query ) {
    if ( is_admin()) {
         return $posts;
     }
-    $post_type = $query->get( 'post_type');
-    if ( is_scalar( $post_type) && !( $post_type == 'bigram' || $post_type === 'any' ) ) {
-        return $posts;
-    }
+   if ( $query->is_post_type_archive() ) {
+	   $post_type=$query->get( 'post_type' );
+	   bw_trace2( $post_type, "post_type", true );
+	   if ( is_scalar( $post_type ) && ! ( $post_type == 'bigram' || $post_type === 'any' ) ) {
+		   return $posts;
+	   }
+   }
     bw_trace2( count( $posts ), "count(posts)", true, BW_TRACE_VERBOSE );
 
     $images = array();
